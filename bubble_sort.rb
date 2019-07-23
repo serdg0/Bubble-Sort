@@ -4,44 +4,44 @@ strings = ["hi", "hello", "hey"]
 module Enumerable
 
    def bubble_sort
-       i=self.size
+       i = self.size
        while i >= 0
            opt = 0
            j = 0
            while j <= i
-               if self[j+1] != nil && self[j+1] < self[j]
+               if self[j + 1] != nil && self[j + 1] < self[j]
                    swapper = self[j]
-                   self[j] = self[j+1]
-                   self[j+1] = swapper
-                   opt +=1
+                   self[j] = self[j + 1]
+                   self[j + 1] = swapper
+                   opt += 1
                end
-               j+=1
+               j += 1
            end
            if opt === 0
              return self
            end
-           i-=1
+           i -= 1
        end
        self
    end
 
    def bubble_sort_by
-       i=self.size
+       i = self.size
        while i >= 0
            opt = 0
            j = 0
            while j <= i
-               if self[j+1] != nil && yield(self[j],self[j+1]) > 0
+               if self[j + 1] != nil && yield(self[j],self[j + 1]) > 0
                    swapper = self[j]
-                   self[j] = self[j+1]
-                   self[j+1] = swapper
+                   self[j] = self[j + 1]
+                   self[j + 1] = swapper
                end
-               j+=1
+               j += 1
            end
            if opt === 0
              return self
            end
-           i-=1
+           i -= 1
        end
        self
    end
